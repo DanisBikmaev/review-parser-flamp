@@ -9,11 +9,12 @@ def get_info(url):
     headers = {'user-agents': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'}
     req = requests.get(url, headers).text
     return req
-
-cafeSearch = 'https://ufa.flamp.ru/search/vkusno_i_tochka'
+cafe = input('Введите название компании: ')
+print('Подождите...')
+cafeSearch = f'https://ufa.flamp.ru/search/{cafe}'
 project_urls = []
 
-for i in range(1, 3):
+for i in range(1, 10):
     pages = i
     req = get_info(cafeSearch + f'?page={pages}')
     soup = BeautifulSoup(req, 'lxml')
@@ -22,3 +23,8 @@ for i in range(1, 3):
     for article in articles:
         caffe_url = 'https:' + article.find('cat-layouts-card').find('section', class_='card card--basic js-card-link').get('data-url')
         project_urls.append(caffe_url)
+
+req = get_info(cafeSearch)
+soup = BeautifulSoup(req, 'lxml')
+company_name = soup.find('h3', class_='card__title t-text t-text--bold js-text-fade').get('title')
+print(f'По Вашему запросу "{cafe}", найдено {len(project_urls)} компаний "{company_name}"')
