@@ -38,10 +38,14 @@ New reviews are recorded in an Excel file and sent to the telegram channel as a 
 <li>Run parser.py</li>
 <li>Enter the name of a company that is in the flamp.ru database, if there is no such company, the script will search for reviews on companies similar in name</li>
 
+___________________________________________________________________________________________________________________________
+
+
 <h2>Review Parser Flam - скрипт для сбора новых отзывов о компаниях c сайта Flamp.ru и отправка на телеграмм канал.</h2>
 
 <h2>Описание</h2>
 Скрипт собирает такие данные, как:
+
 <ol>
   <li>Ссылка на отзыв</li>
   <li>Автор отзыва</li>
@@ -70,6 +74,7 @@ New reviews are recorded in an Excel file and sent to the telegram channel as a 
     <li>В ответном сообщении получаем основные данные о чате/группе. В нижней строке будет ID.</li>
     </ul>
 </details>
+
 <li>Установить время для получения обновений(parser.py -> строка 92, по умолчанию установлено: каждый день в 12:00)</li>
 <li>Указать город поиска (main.py -> строка 14)</li>
 <li>Запустить parser.py</li>
