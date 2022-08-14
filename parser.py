@@ -89,7 +89,7 @@ if __name__ == '__main__':
     all_website = main.project_urls
     fieldnames = ['Источник', 'Автор', 'Время', 'Рейтинг', 'Отзыв']
     #schedule.every(1).minutes.do(all_func) #for test: check updates every 1 minute
-    schedule.every().day.at("12:00").do(all_func) # check updates everi day at 12:00
+    schedule.every().day.at("12:00").do(all_func) # check updates every day at 12:00
     while True:
         print(dt.datetime.now()) #timeout sending telegramm sms
         schedule.run_pending()

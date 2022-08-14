@@ -28,3 +28,8 @@ req = get_info(cafeSearch)
 soup = BeautifulSoup(req, 'lxml')
 company_name = soup.find('h3', class_='card__title t-text t-text--bold js-text-fade').get('title')
 print(f'По Вашему запросу "{cafe}", найдено {len(project_urls)} компаний "{company_name}"')
+
+# new reviews will be added to the excel file at 12:00 every day by default
+# and sent to your telegram chat. Specify the telegram chat (lines 19 and 20),
+# specify the update time (line 92) in the parser.py file
+
